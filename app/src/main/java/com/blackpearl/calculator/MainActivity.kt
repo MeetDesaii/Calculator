@@ -5,14 +5,11 @@ import android.os.Build
 import android.os.Bundle
 import android.os.VibrationEffect
 import android.os.Vibrator
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.blackpearl.calculator.databinding.ActivityMainBinding
-import net.objecthunter.exp4j.ExpressionBuilder
 import javax.script.ScriptEngine
 import javax.script.ScriptEngineManager
 import javax.script.ScriptException
-
 
 class MainActivity : AppCompatActivity() {
 
@@ -233,6 +230,8 @@ class MainActivity : AppCompatActivity() {
 //                    errorArea.text = "Error : Cannot Divide by 0"
 //                }
 
+
+                // Evaluation using library
                 val resultEngine : ScriptEngine = ScriptEngineManager().getEngineByName("rhino")
                 try{
 
