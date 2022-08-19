@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:autofit="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FBD849"
+            app:contentInsetEnd="0dp"
+            app:contentInsetEndWithActions="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp"
+            app:contentInsetStartWithNavigation="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:text="@string/calculator"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="@color/black"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/appbarLayout"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintHeight_percent="0.35"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <me.grantland.widget.AutofitTextView
+                android:id="@+id/calculateTextView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:maxLines="3"
+                android:textColor="#657786"
+                android:layout_marginEnd="20dp"
+                android:gravity="end|bottom"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="30sp"
+                autofit:minTextSize="14sp"
+                autofit:layout_constraintTop_toTopOf="parent"
+                autofit:layout_constraintBottom_toTopOf="@id/resultTextView"/>
+
+            <me.grantland.widget.AutofitTextView
+                android:id="@+id/resultTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:gravity="end|bottom"
+                android:text="0"
+                android:fontFamily="@font/poppins_medium"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="#14171A"
+                android:textSize="40sp"
+                autofit:minTextSize="14sp"
+                autofit:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHeight_percent="0.65">
+
+            <TextView
+                android:id="@+id/Owner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/creator_meet_desai"
+                android:layout_margin="10dp"
+                android:textColor="#FBD849"
+                android:fontFamily="@font/poppins_regular"
+                autofit:layout_constraintBottom_toBottomOf="parent"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintL5"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                autofit:layout_constraintBottom_toTopOf="@id/Owner">
+
+                <TextView
+                    android:id="@+id/symbolEquals"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="="
+                    android:gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:background="#FBD849"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textSize="30sp"
+                    autofit:layout_constraintWidth_percent="0.25"
+                    android:textColor="@color/black"
+                    autofit:layout_constraintEnd_toEndOf="parent"
+                    autofit:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:id="@+id/symbolDot"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="."
+                    android:gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/poppins_regular"
+                    autofit:layout_constraintWidth_percent="0.25"
+                    android:textSize="30sp"
+                    android:textColor="@color/black"
+                    autofit:layout_constraintTop_toTopOf="parent"
+                    autofit:layout_constraintEnd_toStartOf="@id/symbolEquals"
+                    autofit:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:id="@+id/number0"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/poppins_regular"
+                    autofit:layout_constraintWidth_percent="0.25"
+                    android:textSize="30sp"
+                    android:textColor="@color/black"
+                    autofit:layout_constraintTop_toTopOf="parent"
+                    autofit:layout_constraintEnd_toStartOf="@id/symbolDot"
+                    autofit:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:id="@+id/emptySpaceBase"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/poppins_regular"
+                    autofit:layout_constraintWidth_percent="0.25"
+                    android:textSize="30sp"
+                    android:textColor="@color/black"
+                    autofit:layout_constraintTop_toTopOf="parent"
+                    autofit:layout_constraintEnd_toStartOf="@id/number0"
+                    autofit:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintL4"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                autofit:layout_constraintBottom_toTopOf="@id/constraintL5">
+
+                <TextView
+                    android:id="@+id/symbolAddition"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="+"
+                    android:gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/poppins_regular"
+                    autofit:layout_constraintWidth_percent="0.25"
+                    android:textSize="30sp"
+                    android:textColor="#FBD849"
+                    autofit:layout_constraintTop_toTopOf="parent"
+                    autofit:layout_constraintEnd_toEndOf="parent"
+                    autofit:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:id="@+id/number3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="3"
+                    android:gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/poppins_regular"
+                    autofit:layout_constraintWidth_percent="0.25"
+                    android:textSize="30sp"
+                    android:textColor="@color/black"
+                    autofit:layout_constraintTop_toTopOf="parent"
+                    autofit:layout_constraintEnd_toStartOf="@id/symbolAddition"
+                    autofit:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:id="@+id/number2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="2"
+                    android:gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/poppins_regular"
+                    autofit:layout_constraintWidth_percent="0.25"
+                    android:textSize="30sp"
+                    android:textColor="@color/black"
+                    autofit:layout_constraintTop_toTopOf="parent"
+                    autofit:layout_constraintEnd_toStartOf="@id/number3"
+                    autofit:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:id="@+id/number1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/poppins_regular"
+                    autofit:layout_constraintWidth_percent="0.25"
+                    android:textSize="30sp"
+                    android:textColor="@color/black"
+                    autofit:layout_constraintTop_toTopOf="parent"
+                    autofit:layout_constraintEnd_toStartOf="@id/number2"
+                    autofit:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintL3"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                autofit:layout_constraintBottom_toTopOf="@id/constraintL4">
+
+                <TextView
+                    android:id="@+id/symbolSubtraction"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/poppins_regular"
+                    autofit:layout_constraintWidth_percent="0.25"
+                    android:textSize="30sp"
+                    android:textColor="#FBD849"
+                    autofit:layout_constraintTop_toTopOf="parent"
+                    autofit:layout_constraintEnd_toEndOf="parent"
+                    autofit:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:id="@+id/number6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="6"
+                    android:gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/poppins_regular"
+                    autofit:layout_constraintWidth_percent="0.25"
+                    android:textSize="30sp"
+                    android:textColor="@color/black"
+                    autofit:layout_constraintTop_toTopOf="parent"
+                    autofit:layout_constraintEnd_toStartOf="@id/symbolSubtraction"
+                    autofit:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:id="@+id/number5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="5"
+                    android:gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/poppins_regular"
+                    autofit:layout_constraintWidth_percent="0.25"
+                    android:textSize="30sp"
+                    android:textColor="@color/black"
+                    autofit:layout_constraintTop_toTopOf="parent"
+                    autofit:layout_constraintEnd_toStartOf="@id/number6"
+                    autofit:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:id="@+id/number4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="4"
+                    android:gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/poppins_regular"
+                    autofit:layout_constraintWidth_percent="0.25"
+                    android:textSize="30sp"
+                    android:textColor="@color/black"
+                    autofit:layout_constraintTop_toTopOf="parent"
+                    autofit:layout_constraintEnd_toStartOf="@id/number5"
+                    autofit:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintL2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                autofit:layout_constraintBottom_toTopOf="@id/constraintL3">
+
+                <TextView
+                    android:id="@+id/symbolMultiplication"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="×"
+                    android:gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/poppins_regular"
+                    autofit:layout_constraintWidth_percent="0.25"
+                    android:textSize="30sp"
+                    android:textColor="#FBD849"
+                    autofit:layout_constraintTop_toTopOf="parent"
+                    autofit:layout_constraintEnd_toEndOf="parent"
+                    autofit:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:id="@+id/number9"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="9"
+                    android:gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/poppins_regular"
+                    autofit:layout_constraintWidth_percent="0.25"
+                    android:textSize="30sp"
+                    android:textColor="@color/black"
+                    autofit:layout_constraintTop_toTopOf="parent"
+                    autofit:layout_constraintEnd_toStartOf="@id/symbolMultiplication"
+                    autofit:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:id="@+id/number8"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="8"
+                    android:gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/poppins_regular"
+                    autofit:layout_constraintWidth_percent="0.25"
+                    android:textSize="30sp"
+                    android:textColor="@color/black"
+                    autofit:layout_constraintTop_toTopOf="parent"
+                    autofit:layout_constraintEnd_toStartOf="@id/number9"
+                    autofit:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:id="@+id/number7"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="7"
+                    android:gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/poppins_regular"
+                    autofit:layout_constraintWidth_percent="0.25"
+                    android:textSize="30sp"
+                    android:textColor="@color/black"
+                    autofit:layout_constraintTop_toTopOf="parent"
+                    autofit:layout_constraintEnd_toStartOf="@id/number8"
+                    autofit:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintL1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                autofit:layout_constraintBottom_toTopOf="@id/constraintL2">
+
+                <TextView
+                    android:id="@+id/symbolDivision"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="÷"
+                    android:gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/poppins_regular"
+                    autofit:layout_constraintWidth_percent="0.25"
+                    android:textSize="30sp"
+                    android:textColor="#FBD849"
+                    autofit:layout_constraintTop_toTopOf="parent"
+                    autofit:layout_constraintEnd_toEndOf="parent"
+                    autofit:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:id="@+id/symbolBracketEnd"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text=")"
+                    android:gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/poppins_regular"
+                    autofit:layout_constraintWidth_percent="0.25"
+                    android:textSize="25sp"
+                    android:textColor="#FBD849"
+                    autofit:layout_constraintTop_toTopOf="parent"
+                    autofit:layout_constraintEnd_toStartOf="@id/symbolDivision"
+                    autofit:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:id="@+id/symbolBracketStart"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="("
+                    android:gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/poppins_regular"
+                    autofit:layout_constraintWidth_percent="0.25"
+                    android:textSize="25sp"
+                    android:textColor="#FBD849"
+                    autofit:layout_constraintTop_toTopOf="parent"
+                    autofit:layout_constraintEnd_toStartOf="@id/symbolBracketEnd"
+                    autofit:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:id="@+id/symbolAC"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="AC"
+                    android:gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/poppins_regular"
+                    autofit:layout_constraintWidth_percent="0.25"
+                    android:textSize="25sp"
+                    android:textColor="#FBD849"
+                    autofit:layout_constraintTop_toTopOf="parent"
+                    autofit:layout_constraintEnd_toStartOf="@id/symbolBracketStart"
+                    autofit:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintL0"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                autofit:layout_constraintBottom_toTopOf="@id/constraintL1">
+
+                <ImageView
+                    android:id="@+id/symbolBackspace"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginBottom="30dp"
+                    android:src="@drawable/ic_backspace"
+                    autofit:layout_constraintWidth_percent="0.25"
+                    autofit:layout_constraintTop_toTopOf="parent"
+                    autofit:layout_constraintEnd_toEndOf="parent"
+                    autofit:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:id="@+id/errorArea"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginBottom="25dp"
+                    android:paddingStart="15dp"
+                    android:fontFamily="@font/poppins_medium"
+                    autofit:layout_constraintWidth_percent="0.75"
+                    android:textSize="14sp"
+                    android:textColor="#ED1B24"
+                    autofit:layout_constraintTop_toTopOf="parent"
+                    autofit:layout_constraintEnd_toStartOf="@id/symbolBackspace"
+                    autofit:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
