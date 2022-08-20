@@ -25,7 +25,14 @@ class MainActivity : AppCompatActivity() {
 
             symbolDot.setOnClickListener {
                 performVibration()
-                calculateTextView.append(".")
+
+                val calculateTv = calculateTextView.text.toString()
+
+                if(calculateTv.isNotEmpty()){
+                    if((calculateTv[calculateTv.length-1].toString() != ".")) {
+                        calculateTextView.append(".")
+                    }
+                }
             }
 
             number0.setOnClickListener {
@@ -84,18 +91,21 @@ class MainActivity : AppCompatActivity() {
 
                 val calculateTv = calculateTextView.text.toString()
 
-                if((calculateTv[calculateTv.length-1].toString() == "÷") || (calculateTv[calculateTv.length-1].toString() == "×") || (calculateTv[calculateTv.length-1].toString() == "+")|| (calculateTv[calculateTv.length-1].toString() == "-") || (calculateTv[calculateTv.length-1].toString() == ".")){
+                if(calculateTv != ""){
 
-                    val arr = calculateTv.toCharArray().toTypedArray()
+                    if((calculateTv[calculateTv.length-1].toString() == "÷") || (calculateTv[calculateTv.length-1].toString() == "×") || (calculateTv[calculateTv.length-1].toString() == "+")|| (calculateTv[calculateTv.length-1].toString() == "-") || (calculateTv[calculateTv.length-1].toString() == ".")){
 
-                    arr[calculateTv.length-1] = '+'
+                        val arr = calculateTv.toCharArray().toTypedArray()
 
-                    val newCalculatedTv = arr.joinToString("")
+                        arr[calculateTv.length-1] = '+'
 
-                    calculateTextView.text = newCalculatedTv
-                }
-                else if(calculateTv != ""){
-                    calculateTextView.append("+")
+                        val newCalculatedTv = arr.joinToString("")
+
+                        calculateTextView.text = newCalculatedTv
+                    }
+                    else{
+                        calculateTextView.append("+")
+                    }
                 }
             }
 
@@ -105,18 +115,21 @@ class MainActivity : AppCompatActivity() {
 
                 val calculateTv = calculateTextView.text.toString()
 
-                if((calculateTv[calculateTv.length-1].toString() == "÷") || (calculateTv[calculateTv.length-1].toString() == "×") || (calculateTv[calculateTv.length-1].toString() == "+")|| (calculateTv[calculateTv.length-1].toString() == "-") || (calculateTv[calculateTv.length-1].toString() == ".")){
+                if(calculateTv != ""){
 
-                    val arr = calculateTv.toCharArray().toTypedArray()
+                    if((calculateTv[calculateTv.length-1].toString() == "÷") || (calculateTv[calculateTv.length-1].toString() == "×") || (calculateTv[calculateTv.length-1].toString() == "+")|| (calculateTv[calculateTv.length-1].toString() == "-") || (calculateTv[calculateTv.length-1].toString() == ".")){
 
-                    arr[calculateTv.length-1] = '-'
+                        val arr = calculateTv.toCharArray().toTypedArray()
 
-                    val newCalculatedTv = arr.joinToString("")
+                        arr[calculateTv.length-1] = '-'
 
-                    calculateTextView.text = newCalculatedTv
-                }
-                else if(calculateTv != ""){
-                    calculateTextView.append("-")
+                        val newCalculatedTv = arr.joinToString("")
+
+                        calculateTextView.text = newCalculatedTv
+                    }
+                    else{
+                        calculateTextView.append("-")
+                    }
                 }
             }
 
@@ -126,18 +139,21 @@ class MainActivity : AppCompatActivity() {
 
                 val calculateTv = calculateTextView.text.toString()
 
-                if((calculateTv[calculateTv.length-1].toString() == "÷") || (calculateTv[calculateTv.length-1].toString() == "×") || (calculateTv[calculateTv.length-1].toString() == "+")|| (calculateTv[calculateTv.length-1].toString() == "-") || (calculateTv[calculateTv.length-1].toString() == ".")){
+                if(calculateTv != ""){
 
-                    val arr = calculateTv.toCharArray().toTypedArray()
+                    if((calculateTv[calculateTv.length-1].toString() == "÷") || (calculateTv[calculateTv.length-1].toString() == "×") || (calculateTv[calculateTv.length-1].toString() == "+")|| (calculateTv[calculateTv.length-1].toString() == "-") || (calculateTv[calculateTv.length-1].toString() == ".")){
 
-                    arr[calculateTv.length-1] = '×'
+                        val arr = calculateTv.toCharArray().toTypedArray()
 
-                    val newCalculatedTv = arr.joinToString("")
+                        arr[calculateTv.length-1] = '×'
 
-                    calculateTextView.text = newCalculatedTv
-                }
-                else if(calculateTv != ""){
-                    calculateTextView.append("×")
+                        val newCalculatedTv = arr.joinToString("")
+
+                        calculateTextView.text = newCalculatedTv
+                    }
+                    else{
+                        calculateTextView.append("×")
+                    }
                 }
             }
 
@@ -147,18 +163,21 @@ class MainActivity : AppCompatActivity() {
 
                 val calculateTv = calculateTextView.text.toString()
 
-                if((calculateTv[calculateTv.length-1].toString() == "÷") || (calculateTv[calculateTv.length-1].toString() == "×") || (calculateTv[calculateTv.length-1].toString() == "+")|| (calculateTv[calculateTv.length-1].toString() == "-") || (calculateTv[calculateTv.length-1].toString() == ".")){
+                if(calculateTv != ""){
 
-                    val arr = calculateTv.toCharArray().toTypedArray()
+                    if((calculateTv[calculateTv.length-1].toString() == "÷") || (calculateTv[calculateTv.length-1].toString() == "×") || (calculateTv[calculateTv.length-1].toString() == "+")|| (calculateTv[calculateTv.length-1].toString() == "-") || (calculateTv[calculateTv.length-1].toString() == ".")){
 
-                    arr[calculateTv.length-1] = '÷'
+                        val arr = calculateTv.toCharArray().toTypedArray()
 
-                    val newCalculatedTv = arr.joinToString("")
+                        arr[calculateTv.length-1] = '÷'
 
-                    calculateTextView.text = newCalculatedTv
-                }
-                else if(calculateTv != ""){
-                    calculateTextView.append("÷")
+                        val newCalculatedTv = arr.joinToString("")
+
+                        calculateTextView.text = newCalculatedTv
+                    }
+                    else{
+                        calculateTextView.append("÷")
+                    }
                 }
             }
 
@@ -173,26 +192,29 @@ class MainActivity : AppCompatActivity() {
 
                 val calculateTv = calculateTextView.text.toString()
 
-                if((calculateTv[calculateTv.length-1].toString() == "÷") || (calculateTv[calculateTv.length-1].toString() == "×") || (calculateTv[calculateTv.length-1].toString() == "+")|| (calculateTv[calculateTv.length-1].toString() == "-") || (calculateTv[calculateTv.length-1].toString() == ".")){
+                if(calculateTv != ""){
 
-                    val arr = calculateTv.toCharArray().toTypedArray()
+                    if((calculateTv[calculateTv.length-1].toString() == "÷") || (calculateTv[calculateTv.length-1].toString() == "×") || (calculateTv[calculateTv.length-1].toString() == "+")|| (calculateTv[calculateTv.length-1].toString() == "-") || (calculateTv[calculateTv.length-1].toString() == ".")){
 
-                    arr[calculateTv.length-1] = ')'
+                        val arr = calculateTv.toCharArray().toTypedArray()
 
-                    val newCalculatedTv = arr.joinToString("")
+                        arr[calculateTv.length-1] = ')'
 
-                    calculateTextView.text = newCalculatedTv
-                }
-                else if(calculateTv != ""){
-                    calculateTextView.append(")")
+                        val newCalculatedTv = arr.joinToString("")
+
+                        calculateTextView.text = newCalculatedTv
+                    }
+                    else{
+                        calculateTextView.append(")")
+                    }
                 }
             }
 
             symbolAC.setOnClickListener {
                 performVibration()
-                calculateTextView.text = null
+                calculateTextView.text = ""
                 resultTextView.text = "0"
-                errorArea.text = null
+                errorArea.text = ""
             }
 
             symbolBackspace.setOnClickListener {
