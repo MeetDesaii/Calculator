@@ -261,7 +261,7 @@ class MainActivity : AppCompatActivity() {
                     resultTextView.text = result.toString()
                 }
                 catch (e : ScriptException){
-                    errorArea.text = "Error : Script Error (Invalid Input)"
+                    errorArea.text = "Error : Expression Error (Invalid Input)"
                 }
             }
         }
